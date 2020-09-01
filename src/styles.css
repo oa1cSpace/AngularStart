@@ -6,7 +6,5 @@
 
 
 body {
-  background: linear-gradient(to right, #3e2b96, #74ebd5);
-  /*font-size: 14px;*/
-  height: 100%;
+  background: black;
 }
