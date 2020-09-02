@@ -1,1 +1,27 @@
-<p>todo-list works!</p>
+<div class="">
+
+  <div class="todos center">
+
+    <div>
+      <form (submit)="addTodo($event)">
+        <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo">
+        <button mat-raised-button type="submit" [disabled]="newTodo===''">Add Todo</button>
+      </form>
+    </div>
+
+    <ul>
+      <li *ngFor="let todo of todos; let i=index">
+        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed"/>
+
+        <span [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span>
+        <span (click)="deleteTodo(i)"><mat-icon>highlight_off</mat-icon></span>
+
+      </li>
+    </ul>
+
+    <div class="mtop20">
+      <button (click)="deleteSelectedTodos()">Delete Selected</button>
+    </div>
+  </div>
+</div>
+

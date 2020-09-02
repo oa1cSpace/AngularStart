@@ -50,3 +50,14 @@ input.example-right-align {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }*/
+
+
+.pic{
+  min-height: 100vh;
+  width: 100%;
+  background: url('../../../src/assets/pics/1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

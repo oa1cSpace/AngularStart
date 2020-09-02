@@ -40,3 +40,14 @@ input.example-right-align {
 .black{
   color: #1a1a1a;
 }
+
+
+.pic{
+  min-height: 100vh;
+  width: 100%;
+  background: url('../../../src/assets/pics/4.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
