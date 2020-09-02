@@ -38,17 +38,19 @@
 
       <div class="margin">
         <!--BTN_LOGIN-->
+        <a routerLink="/todo-list" class="black">
         <button
           mat-stroked-button
           type="submit"
           class="width_100"
           [disabled]="reactiveForm.invalid">Login
         </button>
+        </a>
       </div>
 
       <div class="margin">
         <!--BTN_BACK-->
-        <a routerLink="/">
+        <a routerLink="/" class="black">
           <button
             mat-stroked-button
             type="submit"
@@ -64,6 +66,4 @@
      </div>-->
 
   </form>
-
-
 </div>

@@ -37,6 +37,10 @@ input.example-right-align {
   margin-top: 5px;
 }
 
+.black{
+  color: #1a1a1a;
+}
+
 /*.back-position{
 
   position: fixed;
