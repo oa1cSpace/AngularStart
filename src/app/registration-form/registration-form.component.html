@@ -8,7 +8,13 @@
         <mat-form-field appearance="fill" class="width_100">
           <mat-label>Name</mat-label>
           <label>
-            <input matInput placeholder="Enter your name" required>
+            <input
+              matInput
+              placeholder="Enter your name"
+              formControlName="name"
+              required
+              pattern=[A-Za-zА-Яа-яЁё]{2,30}
+            >
           </label>
         </mat-form-field>
       </div>
@@ -17,7 +23,13 @@
         <mat-form-field appearance="fill" class="width_100">
           <mat-label>Surname</mat-label>
           <label>
-            <input matInput placeholder="Enter your surname" required>
+            <input
+              matInput
+              placeholder="Enter your surname"
+              formControlName="surname"
+              required
+              pattern=[A-Za-zА-Яа-яЁё]{2,30}
+            >
           </label>
         </mat-form-field>
       </div>
@@ -27,33 +39,29 @@
         <mat-form-field appearance="fill" class="width_100">
           <mat-label>Email</mat-label>
           <label>
-            <input matInput placeholder="pat@example.com" formControlName="email" required (click)="click()">
+            <input
+              matInput
+              placeholder="pat@example.com"
+              formControlName="email"
+              required
+              pattern=[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}
+              >
           </label>
           {{getErrorMessage['email']}}
-          <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
         </mat-form-field>
       </div>
-
-
-      <!--      <div>-->
-      <!--        <mat-form-field appearance="fill" class="width_100">-->
-      <!--          <mat-label>Email-B</mat-label>-->
-      <!--          <label>Email</label>-->
-      <!--          <input class="form-control" name="email" [(ngModel)]="email"-->
-      <!--                 required pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"/>-->
-      <!--          <div [hidden]="email.valid || email.untouched" class="alert alert-danger">-->
-      <!--            Некорректный email-->
-      <!--          </div>-->
-      <!--          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-      <!--        </mat-form-field>-->
-      <!--      </div>-->
 
 
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
           <label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <input
+              matInput [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              required
+              pattern=[A-Za-zА-Яа-яЁё]{6,60}
+            >
           </label>
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide">

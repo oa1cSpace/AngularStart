@@ -11,17 +11,27 @@ export class RegistrationFormComponent implements OnInit {
   hide = true;
   reactiveForm: FormGroup = this.fb.group({
 
+    name: this.fb.control('',[
+      Validators.required,
+      // Validators.pattern(/[A-Za-zА-Яа-яЁё]{2,30}/)   WHY?!?
+    ]),
+
+    surname: this.fb.control('',[
+      Validators.required
+    ]),
+
     email: this.fb.control('', [
       Validators.required,
       Validators.email,
-      Validators.pattern(/[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}/)
+      // Validators.pattern(/[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}/)
     ]),
     password: this.fb.control('', [
       Validators.required,
-      Validators.pattern(/^[A-Za-zА-Яа-яЁё]{4,60}/)
+      // Validators.pattern(/[A-Za-zА-Яа-яЁё]{4,60}/)
     ]),
   });
   getErrorMessage = {email: ''};
+
   constructor(private fb: FormBuilder){}
 
 
@@ -32,12 +42,12 @@ export class RegistrationFormComponent implements OnInit {
   // tslint:disable-next-line:typedef
   initForm(){
     this.reactiveForm = this.fb.group({
+      name: [null],
+      surname: [null],
       email: [null],
       password: [null]
     });
   }
-  click(){
-    console.log('click');
-  }
+
 
 }
