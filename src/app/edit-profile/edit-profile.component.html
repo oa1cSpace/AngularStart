@@ -1,1 +1,80 @@
-<p>edit-profile works!</p>
+<!--TOOLBAR-->
+<div>
+  <mat-toolbar color="primary">
+    <!--<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>-->
+    <span>My profile</span>
+    <a routerLink="/login" class="black">
+    <span class="material-icons">
+    exit_to_app
+    </span>
+    </a>
+
+    <span class="example-spacer"></span>
+    <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>-->
+    <!--<button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>-->
+  </mat-toolbar>
+</div>
+
+
+<!--CARD-->
+<div class="center margin-top">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Lorem ipsum</mat-card-title>
+      <mat-card-subtitle>profile</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+    <div class="center-lines">
+
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="John">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Surname</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Doe">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="john_doe@mail.com">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Something else</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="else something">
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+
+    </div>
+
+
+
+
+
+  </mat-card>
+</div>

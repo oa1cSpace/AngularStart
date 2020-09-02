@@ -1,0 +1,43 @@
+/*TOOL_BAR*/
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.center {
+  /* margin: auto;
+   width: 50%;
+   border: 3px solid #4ca34c;
+   padding: 10px;*/
+
+  position: fixed;
+  left: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.center-lines{
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.margin-top{
+  margin-top: 2%;
+}
+
+
+.black{
+  color: #1a1a1a;
+}

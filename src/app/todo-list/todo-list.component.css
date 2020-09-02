@@ -1,3 +1,10 @@
+/*TOOL_BAR*/
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
 .center {
  /* padding: 20px;
   height: auto;
@@ -77,4 +84,8 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.black{
+  color: #1a1a1a;
 }
