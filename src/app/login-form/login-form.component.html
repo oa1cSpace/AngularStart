@@ -1,1 +1,67 @@
-<p>login-form works!</p>
+<div class="mat-drawer-container">
+
+  <form [formGroup]="reactiveForm">
+
+    <div class="center registrationFormUnderlayer">
+      <div>
+        <mat-form-field appearance="fill" class="width_100">
+          <mat-label>Name</mat-label>
+          <label>
+            <input
+              matInput
+              placeholder="Enter your name"
+              formControlName="name"
+              required
+              pattern=[A-Za-zА-Яа-яЁё]{2,30}
+            >
+          </label>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <label>
+            <input
+              matInput [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              required
+              pattern=[A-Za-zА-Яа-яЁё]{6,60}
+            >
+          </label>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div class="margin">
+        <!--BTN_LOGIN-->
+        <button
+          mat-stroked-button
+          type="submit"
+          class="width_100"
+          [disabled]="reactiveForm.invalid">Login
+        </button>
+      </div>
+
+      <div class="margin">
+        <!--BTN_BACK-->
+        <button
+          mat-stroked-button
+          type="submit"
+          class="width_100">Back
+        </button>
+      </div>
+
+    </div>
+
+   <!-- <div class="back-position">
+      <h3>Back</h3>
+    </div>-->
+
+  </form>
+
+
+</div>

@@ -34,7 +34,6 @@ export class RegistrationFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder){}
 
-
   // tslint:disable-next-line:typedef
   ngOnInit(){
     this.initForm();
@@ -48,6 +47,4 @@ export class RegistrationFormComponent implements OnInit {
       password: [null]
     });
   }
-
-
 }

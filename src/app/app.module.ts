@@ -8,13 +8,23 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 
+import {Routes, RouterModule} from "@angular/router";
+
 import { AppComponent } from './app.component';
 import {RegistrationFormComponent} from "./registration-form/registration-form.component";
+import {LoginFormComponent} from "./login-form/login-form.component";
+
+// list of routes:
+const appRoutes: Routes = [
+  {path: '', component: RegistrationFormComponent},
+  {path: 'login', component: LoginFormComponent},
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +35,8 @@ import {RegistrationFormComponent} from "./registration-form/registration-form.c
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
