@@ -48,15 +48,15 @@
 
 .todos input.textfield {
   width: 480px;
-  height: 36px;
+  height: 30px;
   margin-right: 20px;
   font-size: 1.4em;
   vertical-align: top;
 }
 
 .todos input.checkbox {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .todos .checked {
