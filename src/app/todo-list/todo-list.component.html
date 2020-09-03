@@ -9,26 +9,25 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>dialpad</mat-icon>
-        <span>Redial</span>
-      </button>
-      <button mat-menu-item disabled>
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
-      </button>
+
+      <a routerLink="/edit-profile" class="black">
+        <button mat-menu-item>
+          <mat-icon>perm_contact_calendar</mat-icon>
+          <span>Edit profile</span>
+        </button>
+      </a>
+
+      <a routerLink="/login" class="black">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Exit</span>
+        </button>
+      </a>
+
     </mat-menu>
 
     <span>TODO-list</span>
-    <a routerLink="/login" class="black">
-    <span class="material-icons">
-    exit_to_app
-    </span>
-    </a>
+
 
     <span class="example-spacer"></span>
     <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -47,24 +46,29 @@
 
     <div>
       <form (submit)="addTodo($event)">
-        <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo">
-        <button mat-raised-button type="submit" [disabled]="newTodo===''">Add Todo</button>
+        <input
+          [(ngModel)]="newTodo"
+          (keyup.enter)="newTodo=''"
+          class="textfield"
+          name="newTodo"
+          placeholder="write your task">
+        <button mat-stroked-button color="primary" type="submit" [disabled]="newTodo===''">Add Todo</button>
       </form>
     </div>
+
 
     <ul>
       <li *ngFor="let todo of todos; let i=index">
         <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed"/>
-
-        <span [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span>
-        <span (click)="deleteTodo(i)"><mat-icon>highlight_off</mat-icon></span>
-
+        <span class="font-size" [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span>
+        <span (click)="deleteTodo(i)"><mat-icon>delete_outline</mat-icon></span>
       </li>
     </ul>
 
     <div class="mtop20">
-      <button (click)="deleteSelectedTodos()">Delete Selected</button>
+      <button mat-stroked-button color="warn" (click)="deleteSelectedTodos()">Delete Selected</button>
     </div>
+
   </div>
 </div>
 

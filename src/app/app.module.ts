@@ -18,6 +18,8 @@ import {TodoListComponent} from "./todo-list/todo-list.component";
 import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 /*import {MatCardModule} from "@angular/material/card";*/
 
 // list of routes:
@@ -51,6 +53,9 @@ const appRoutes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatMenuModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
