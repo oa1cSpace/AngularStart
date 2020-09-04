@@ -37,6 +37,7 @@
         <button mat-stroked-button color="primary" type="submit" [disabled]="newTodo===''">Add Todo</button>
       </form>
     </div>
+
     <ul>
       <li *ngFor="let todo of todos; let i=index">
         <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed"/>
@@ -44,6 +45,7 @@
         <span (click)="deleteTodo(i)"><mat-icon>delete_outline</mat-icon></span>
       </li>
     </ul>
+
     <div>
       <button mat-stroked-button color="warn" (click)="deleteSelectedTodos()">Delete Selected</button>
     </div>

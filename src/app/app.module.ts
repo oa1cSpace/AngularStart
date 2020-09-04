@@ -8,23 +8,20 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from '@angular/material/card';
-
 import {Routes, RouterModule} from "@angular/router";
-
 import { AppComponent } from './app.component';
 import {RegistrationFormComponent} from "./registration-form/registration-form.component";
 import {LoginFormComponent} from "./login-form/login-form.component";
-import {TodoListComponent} from "./todo-list/todo-list.component";
+import {TodoListComponent} from "./todo-list/page/todo-list.component";
 import {EditProfileComponent} from "./edit-profile/edit-profile.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-/*import {MatCardModule} from "@angular/material/card";*/
+import {TodoModule} from "./todo-list/todo.module";
 
 // list of routes:
 const appRoutes: Routes = [
@@ -57,12 +54,12 @@ const appRoutes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatMenuModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
+    StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
+    TodoModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
