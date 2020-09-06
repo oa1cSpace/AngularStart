@@ -28,6 +28,7 @@
     "@ngrx/store-devtools": "^10.0.0",
     "@types/core-js": "^2.5.3",
     "rxjs": "~6.5.5",
+    "rxjs-compat": "^6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
