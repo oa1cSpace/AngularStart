@@ -27,7 +27,7 @@ import {TodoModule} from './todo-list/todo.module';
 const appRoutes: Routes = [
   {path: '', component: RegistrationFormComponent},
   {path: 'login', component: LoginFormComponent},
-  {path: 'todo-list', component: TodoListComponent},
+ /* {path: 'todo-list', component: TodoListComponent},*/
   {path: 'edit-profile', component: EditProfileComponent},
 ];
 
@@ -49,15 +49,16 @@ const appRoutes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatCardModule,
     MatToolbarModule,
     MatMenuModule,
+    /*RouterModule.forRoot(appRoutes),*/
+    RouterModule.forRoot([]),
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     TodoModule
 
   ],

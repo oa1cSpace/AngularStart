@@ -1,0 +1,133 @@
+
+#структура бд, которую я вам предлагаю:
+
+#таблица "users", кодировка utf8mb4_general_ci
+#поля:
+#- id (int 11, primary)
+#- name (varchar, 191)
+#- first_name (varchar, 191)
+#- last_name (varchar, 191)
+#- email (varchar, 191)
+#- password (varchar, 191)
+#- created_at (timestamp)
+#- updated_at (timestamp)
+
+#таблица "issues", кодировка utf8mb4_general_ci
+#поля:
+#- id (int 11, primary)
+#- name (varchar, 191)
+#- description (text)
+#- status (varchar, 191)
+#- user_id (int 11)
+#- created_at (timestamp)
+#- updated_at (timestamp)
+
+#ALTER TABLE {table} CONVERT TO CHARACTER SET utf8mb4;
+
+#########################################################
+##########      CREATE DATABASE          ################
+#########################################################
+
+DROP DATABASE IF EXISTS todo_list_DB;
+
+CREATE DATABASE todo_list_DB;
+
+USE  todo_list_DB;
+
+#########################################################
+##########       TABLE users             ################
+#########################################################
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users(
+  id INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+  login VARCHAR(191),
+  first_name VARCHAR(191),
+  last_name VARCHAR(191),
+  email VARCHAR(191),
+  password VARCHAR(191),
+  created_at TIMESTAMP(6),
+  updated_at TIMESTAMP(6),
+  PRIMARY KEY (id)
+);
+
+# TIMESTAMP(6)  ==> YYMMDD
+
+SELECT * FROM users;
+
+#########################################################
+#########       TABLE todo_list          ################
+#########################################################
+
+DROP TABLE IF EXISTS  todo_list;
+
+CREATE TABLE todo_list(
+  id INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+  title VARCHAR(191),
+  description TEXT,
+  status INT(1),
+  user_id INT(11),
+  created_at TIMESTAMP(6),
+  updated_at TIMESTAMP(6),
+  PRIMARY KEY (id)
+);
+
+
+SELECT * FROM todo_list;
+#########################################################
+#########                                ################
+#########################################################
+
+SHOW TABLES;
+
+#########################################################
+#########      INSERT users              ################
+#########################################################
+
+INSERT users (login, first_name, last_name, email, password, created_at, updated_at)
+VALUES ('C-137', 'Rick', 'Sanchez', 'rick@mail.com', 'password', 990101, 200707);
+
+INSERT users (login, first_name, last_name, email, password, created_at)
+VALUES ('Morty', 'Morty', 'Smith', 'morty@mail.com', 'password', 070101);
+
+INSERT users (login, first_name, last_name, email, password, created_at)
+VALUES ('homy', 'Homer', 'Simpson', 'homy@mail.com', 'password', 980101);
+
+#########################################################
+#########      INSERT todo_list          ################
+#########################################################
+
+INSERT todo_list (title, description, status, user_id, created_at)
+VALUES ('traveling', 'time traveling to 1980', '0', '1', 200909);
+
+INSERT todo_list (title, description, status, user_id, created_at)
+VALUES ('death cristal', 'find death cristal', '0', '2', 200908);
+
+INSERT todo_list (title, description, status, user_id, created_at)
+VALUES ('beer', 'buy two packs of beer', '0', '3', 200718);
+
+
+#########################################################
+#########                                ################
+#########################################################
+
+created_at TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
