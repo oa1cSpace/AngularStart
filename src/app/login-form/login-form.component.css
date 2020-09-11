@@ -29,7 +29,7 @@ input.example-right-align {
   margin: 0 auto;
 }
 
-.height_100{
+.width_100{
   width: 100%;
 }
 
@@ -39,6 +39,13 @@ input.example-right-align {
 
 .black{
   color: #1a1a1a;
+}
+
+.header-h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-decoration: inherit;
 }
 
 /*.back-position{

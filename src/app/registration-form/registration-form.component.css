@@ -24,12 +24,13 @@ input.example-right-align {
 .registrationFormUnderlayer {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
-  width: 243px;
+  /*width: 243px;*/
+  width: 350px;
   padding: 30px;
   margin: 0 auto;
 }
 
-.height_100{
+.width_100{
   width: 100%;
 }
 
@@ -61,4 +62,9 @@ input.example-right-align {
 .header-p {
   text-align: center;
   text-decoration: inherit;
+}
+
+.one-row{
+  display: flex;
+  justify-content: space-around;
 }

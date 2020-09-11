@@ -54,7 +54,7 @@
       </div>
 
       <div>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="width_100">
           <mat-label>Password</mat-label>
           <label>
             <input
@@ -72,26 +72,29 @@
       </div>
 
 
-      <div class="margin">
-        <!--BTN_REGISTRATION-->
-        <button
-          mat-stroked-button
-          type="submit"
-          class="width_100 black"
-          routerLink="/todo-list"
-          (click)="addUser()"
-          [disabled]="reactiveForm.invalid">Registration
-        </button>
+      <div>
+        <div class="margin width_100">
+          <!--BTN_REGISTRATION-->
+          <button
+            mat-stroked-button
+            type="submit"
+            class="width_100 black"
+            routerLink="/todo-list"
+            (click)="addUser()"
+            [disabled]="reactiveForm.invalid">Registration
+          </button>
+        </div>
+
+        <div class="margin width_100">
+          <!--BTN_LOGIN-->
+          <a routerLink="/" class="black">
+            <button mat-stroked-button
+                    class="width_100">Login
+            </button>
+          </a>
+        </div>
       </div>
 
-      <div class="margin">
-        <!--BTN_LOGIN-->
-        <a routerLink="/" class="black">
-          <button mat-stroked-button
-                  class="width_100">Login
-          </button>
-        </a>
-      </div>
     </div>
   </form>
 </div>
