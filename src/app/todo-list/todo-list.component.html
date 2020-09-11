@@ -1,0 +1,140 @@
+<!--NAV-BAR-->
+<!--<div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item
+                routerLink="/edit-profile"
+                class="black">
+          <mat-icon>perm_contact_calendar</mat-icon>
+          <span>Edit profile</span>
+        </button>
+      <a routerLink="/" class="black">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Exit</span>
+        </button>
+      </a>
+    </mat-menu>
+    <span>TODO-list</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</div>-->
+
+<!--TODO_LIST-->
+<!--<div>
+  <div class="todos center">
+    <div>
+      <form (submit)="addTodo($event)">
+        <input
+          [(ngModel)]="newTodo"
+          (keyup.enter)="newTodo=''"
+          class="textfield"
+          name="newTodo"
+          placeholder="write your task">
+        <button mat-stroked-button color="primary" type="submit" [disabled]="newTodo===''">Add Todo</button>
+      </form>
+    </div>
+    <ul>
+      <li *ngFor="let todo of todos; let i=index">
+        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed"/>
+        <span class="font-size" [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span>
+        <span (click)="deleteTodo(i)"><mat-icon>delete_outline</mat-icon></span>
+      </li>
+    </ul>
+    <div>
+      <button mat-stroked-button color="warn" (click)="deleteSelectedTodos()">Delete Selected</button>
+    </div>
+  </div>
+</div>-->
+
+
+
+
+
+<!--NAV-BAR-->
+<div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              routerLink="/edit-profile"
+              class="black">
+        <mat-icon>perm_contact_calendar</mat-icon>
+        <span>Edit profile</span>
+      </button>
+      <a routerLink="/" class="black">
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Exit</span>
+        </button>
+      </a>
+    </mat-menu>
+    <span>TODO-list</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</div>
+<!--TODO_LIST-->
+<div class="todo-body">
+  <div class="main-container">
+
+    <mat-form-field appearance="outline" class="todo-input">
+      <input matInput placeholder="Write here your task and press Enter"
+             [(ngModel)]="todoTitle"
+             (keyup.enter)="addTodo()">
+    </mat-form-field>
+
+    <div class="todo-item" *ngFor="let todo of todosFiltered()">
+      <div class="todo-item-left">
+
+        <mat-checkbox color="primary"
+                      [(ngModel)]="todo.completed"
+                      (change)="doneEdit(todo)">
+        </mat-checkbox>
+
+        <div *ngIf="!todo.editing; else editingTodo"
+             class="todo-item-label"
+             [ngClass]="{ 'completed' : todo.completed }"
+             (dblclick)="editTodo(todo)">
+          {{ todo.title }}
+        </div>
+        <ng-template #editingTodo>
+          <input matInput class="todo-item-edit"
+                 [(ngModel)]="todo.title"
+                 (blur)="doneEdit(todo)"
+                 (keyup.enter)="doneEdit(todo)"
+                 (keyup.esc)="cancelEdit(todo)"
+                 autofocus>
+        </ng-template>
+      </div>
+
+      <mat-icon-button class="remove-item" (click)="deleteTodo(todo.id)">
+        <mat-icon>highlight_off</mat-icon>
+      </mat-icon-button>
+    </div>
+    <!--BTNS-->
+    <!--<div class="extra-container">
+      <div>
+        <button mat-raised-button class="button-main"
+                [ngClass]="{'active': filter === 'all'}"
+                (click)="filter='all'">
+          Все задачи
+        </button>
+        <button mat-raised-button class="button-main" color="accent"
+                [ngClass]="{'active': filter === 'active'}"
+                (click)="filter='active'">
+          Активные
+        </button>
+        <button mat-raised-button class="button-main" color="primary"
+                [ngClass]="{'active': filter === 'completed'}"
+                (click)="filter='completed'">
+          Завершеные
+        </button>
+      </div>
+    </div>-->
+  </div>
+</div>

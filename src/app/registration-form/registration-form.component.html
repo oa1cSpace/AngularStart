@@ -4,6 +4,9 @@
 
     <div class="center registrationFormUnderlayer">
 
+      <h1 class="header-h1"><b>Registration</b></h1>
+      <p class="header-p">Please, fill all forms below.</p>
+
       <div>
         <mat-form-field appearance="fill" class="width_100">
           <mat-label>Name</mat-label>
@@ -74,20 +77,21 @@
         <button
           mat-stroked-button
           type="submit"
-          class="width_100"
+          class="width_100 black"
+          routerLink="/todo-list"
+          (click)="addUser()"
           [disabled]="reactiveForm.invalid">Registration
         </button>
       </div>
 
       <div class="margin">
         <!--BTN_LOGIN-->
-        <a routerLink="/login" class="black">
+        <a routerLink="/" class="black">
           <button mat-stroked-button
                   class="width_100">Login
           </button>
         </a>
       </div>
-
     </div>
   </form>
 </div>

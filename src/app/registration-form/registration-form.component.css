@@ -29,7 +29,7 @@ input.example-right-align {
   margin: 0 auto;
 }
 
-.width_100{
+.height_100{
   width: 100%;
 }
 
@@ -50,4 +50,15 @@ input.example-right-align {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.header-h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  text-decoration: inherit;
+}
+
+.header-p {
+  text-align: center;
+  text-decoration: inherit;
 }

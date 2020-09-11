@@ -5,36 +5,26 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-
-      <a routerLink="/todo-list" class="black">
-        <button mat-menu-item>
-          <mat-icon>description</mat-icon>
-          <span>Todo list</span>
-        </button>
-      </a>
-
-      <a routerLink="/login" class="black">
-        <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Exit</span>
-        </button>
-      </a>
-
+      <!--BTN_ToDoList-->
+      <button mat-menu-item
+              routerLink="/todo-list"
+              class="black">
+        <mat-icon>description</mat-icon>
+        <span>Todo list</span>
+      </button>
+      <!--BTN_EXIT-->
+      <button mat-menu-item
+              routerLink="/"
+              class="black"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Exit</span>
+      </button>
     </mat-menu>
-
     <span>My profile</span>
-
     <span class="example-spacer"></span>
-    <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>-->
-    <!--<button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>-->
   </mat-toolbar>
 </div>
-
-
 <!--CARD-->
 <div class="center margin-top">
   <mat-card class="example-card">
@@ -44,9 +34,7 @@
       <mat-card-subtitle>profile</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-
     <div class="center-lines">
-
       <mat-card-content>
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -55,7 +43,6 @@
           </mat-form-field>
         </form>
       </mat-card-content>
-
       <mat-card-content>
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -64,7 +51,6 @@
           </mat-form-field>
         </form>
       </mat-card-content>
-
       <mat-card-content>
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -73,7 +59,6 @@
           </mat-form-field>
         </form>
       </mat-card-content>
-
       <mat-card-content>
         <form class="example-form">
           <mat-form-field class="example-full-width">
@@ -82,8 +67,6 @@
           </mat-form-field>
         </form>
       </mat-card-content>
-
     </div>
-
   </mat-card>
 </div>
