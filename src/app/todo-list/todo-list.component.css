@@ -104,10 +104,10 @@ pic{
 }
 
 .toolbar-p {
- /* width: 100%;*/
+  width: 100%;
   text-align: center;
   margin: 0 auto;
-  font-size: 36px;
+  font-size: 18px;
 }
 
 .toolbar{
@@ -210,4 +210,8 @@ pic{
 
 .height_100{
   height: 100%;
+}
+
+.margin-top{
+  margin-top: 15px;
 }

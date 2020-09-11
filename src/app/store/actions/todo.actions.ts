@@ -3,6 +3,7 @@ import { Todo } from '../models/todo.model';
 
 export enum TodoActionTypes {
   todoGetTodo = '[Todo] get',
+  todoAddAllTodos = '[Todo] get all',
   todoGetTodoSuccess = '[Todo] get todo success',
   todoAddTodo = '[Todo] add todo',
   todoAddTodoSuccess = '[Todo] add todo success',
@@ -12,6 +13,12 @@ export enum TodoActionTypes {
   todoUpdateTodoSuccess = '[Todo] update todo success',
   todoError = '[Todo] error'
 };
+
+export class AddAllTodos implements Action {
+  readonly type = TodoActionTypes.todoAddAllTodos;
+
+  constructor(public payload: Todo[]) {}
+}
 
 export class GetTodo implements Action {
   readonly type = TodoActionTypes.todoGetTodo;
@@ -70,4 +77,5 @@ export type TodoActions =
   | GetTodoByIdSuccess
   | UpdateTodo
   | UpdateTodoSuccess
-  | TodoError;
+  | TodoError
+  | AddAllTodos;

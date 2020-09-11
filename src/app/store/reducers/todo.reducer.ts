@@ -38,6 +38,15 @@ export function reducer(state = initialState, action: TodoActions): State {
         loading: true
       };
 
+    case TodoActionTypes.todoAddAllTodos:
+      // case TodoActionTypes.todoUpdateTodo:
+      console.log('222222222 ', action)
+      return {
+        ...state,
+        todo: [...state.todo, ...action.payload],
+        loading: true
+      };
+
     case TodoActionTypes.todoGetTodoSuccess:
       return adapter.setAll([action.payload], {
         ...state,

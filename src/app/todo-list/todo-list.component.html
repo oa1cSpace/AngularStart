@@ -1,64 +1,5 @@
-<!--NAV-BAR-->
-<!--<div>
-  <mat-toolbar color="primary">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item
-                routerLink="/edit-profile"
-                class="black">
-          <mat-icon>perm_contact_calendar</mat-icon>
-          <span>Edit profile</span>
-        </button>
-      <a routerLink="/" class="black">
-        <button mat-menu-item>
-          <mat-icon>exit_to_app</mat-icon>
-          <span>Exit</span>
-        </button>
-      </a>
-    </mat-menu>
-    <span>TODO-list</span>
-    <span class="example-spacer"></span>
-  </mat-toolbar>
-</div>-->
-
-<!--TODO_LIST-->
-<!--<div>
-  <div class="todos center">
-    <div>
-      <form (submit)="addTodo($event)">
-        <input
-          [(ngModel)]="newTodo"
-          (keyup.enter)="newTodo=''"
-          class="textfield"
-          name="newTodo"
-          placeholder="write your task">
-        <button mat-stroked-button color="primary" type="submit" [disabled]="newTodo===''">Add Todo</button>
-      </form>
-    </div>
-    <ul>
-      <li *ngFor="let todo of todos; let i=index">
-        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed"/>
-        <span class="font-size" [ngClass]="{'checked': todo.completed}">{{ todo.newTodo }}</span>
-        <span (click)="deleteTodo(i)"><mat-icon>delete_outline</mat-icon></span>
-      </li>
-    </ul>
-    <div>
-      <button mat-stroked-button color="warn" (click)="deleteSelectedTodos()">Delete Selected</button>
-    </div>
-  </div>
-</div>-->
-
-
-
-
-
-
-
 <!--=== TASKS ===-->
 <div class="todo-body">
-
 
   <!--NAV-BAR-->
   <div>
@@ -86,8 +27,9 @@
   </div>
 
   <div class="main-container">
-    <mat-form-field appearance="outline" class="todo-input">
+    <mat-form-field appearance="outline" class="todo-input margin-top">
       <input matInput placeholder="Write here your task and press Enter"
+             class="toolbar-p"
              [(ngModel)]="todoTitle"
              (keyup.enter)="addTodo()">
     </mat-form-field>
@@ -121,24 +63,24 @@
       </mat-icon-button>
     </div>
     <!--BTNS-->
-    <!--<div class="extra-container">
+    <div class="extra-container">
       <div>
         <button mat-raised-button class="button-main"
                 [ngClass]="{'active': filter === 'all'}"
                 (click)="filter='all'">
-          Все задачи
+          All tasks
         </button>
         <button mat-raised-button class="button-main" color="accent"
                 [ngClass]="{'active': filter === 'active'}"
                 (click)="filter='active'">
-          Активные
+          Active
         </button>
         <button mat-raised-button class="button-main" color="primary"
                 [ngClass]="{'active': filter === 'completed'}"
                 (click)="filter='completed'">
-          Завершеные
+          Done
         </button>
       </div>
-    </div>-->
+    </div>
   </div>
 </div>
