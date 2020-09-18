@@ -16,8 +16,8 @@
 
       <!--BTN_EXIT-->
       <button mat-menu-item
-              routerLink="/"
               class="black"
+              (click)="logOut()"
       >
         <mat-icon>exit_to_app</mat-icon>
         <span>Exit</span>
@@ -34,7 +34,7 @@
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Lorem ipsum</mat-card-title>
+      <mat-card-title>{{user.name}}</mat-card-title>
       <mat-card-subtitle>profile</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
@@ -44,7 +44,7 @@
         <form class="example-form">
           <mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="John">
+            <input matInput  value='{{user.name}}'>
           </mat-form-field>
         </form>
       </mat-card-content>
@@ -53,7 +53,7 @@
         <form class="example-form">
           <mat-form-field class="example-full-width">
             <mat-label>Surname</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Doe">
+            <input matInput value='{{user.surname}}'>
           </mat-form-field>
         </form>
       </mat-card-content>
@@ -62,19 +62,12 @@
         <form class="example-form">
           <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="john_doe@mail.com">
+            <input matInput value='{{user.email}}'>
           </mat-form-field>
         </form>
       </mat-card-content>
 
-      <mat-card-content>
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <mat-label>Something else</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="else something">
-          </mat-form-field>
-        </form>
-      </mat-card-content>
+
 
     </div>
   </mat-card>

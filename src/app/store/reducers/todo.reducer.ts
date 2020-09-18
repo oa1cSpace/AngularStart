@@ -1,6 +1,8 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {Todo} from '../models/todo.model';
 import {TodoActions, TodoActionTypes} from '../actions/todo.actions';
+import {element} from "protractor";
+import {UserActions, UserActionTypes} from "../actions/user.actions";
 
 export interface State extends EntityState<Todo> {
   todo: Todo[];
@@ -8,6 +10,8 @@ export interface State extends EntityState<Todo> {
   loading: boolean;
   error: any;
   selectedTodoId: number;
+
+
 }
 
 export const adapter: EntityAdapter<Todo> = createEntityAdapter<Todo>();
@@ -20,7 +24,7 @@ export const initialState: State = adapter.getInitialState({
   error: null,
 });
 
-export function reducer(state = initialState, action: TodoActions): State {
+export function reducer(state = initialState, action: TodoActions | UserActions): State {
 
   switch (action.type) {
     case TodoActionTypes.todoGetTodo:
@@ -40,11 +44,19 @@ export function reducer(state = initialState, action: TodoActions): State {
 
     case TodoActionTypes.todoAddAllTodos:
       // case TodoActionTypes.todoUpdateTodo:
-      console.log('222222222 ', action)
+      /*console.log('222222222 ', action)*/
       return {
         ...state,
         todo: [...state.todo, ...action.payload],
         loading: true
+      };
+    case UserActionTypes.userLogOut:
+      // case TodoActionTypes.todoUpdateTodo:
+      /*console.log('222222222 ', action)*/
+      return {
+        ...state,
+        todo: [],
+        loading: false
       };
 
     case TodoActionTypes.todoGetTodoSuccess:
@@ -85,6 +97,40 @@ export function reducer(state = initialState, action: TodoActions): State {
         loaded: false,
         error: action.payload
       };
+
+    case TodoActionTypes.todoDelete: {
+      return {
+        ...state,
+        todo: [
+          ...state.todo.filter((element) => element.id !== action.payload)
+        ]
+      };
+    }
+
+    case TodoActionTypes.todoEdit: {
+      return {
+        ...state,
+        todo: [
+          ...state.todo.map((element) => {
+            if(element.id === action.payload.id) {
+              return {
+                ...element,
+                title: action.payload.title,
+                editing: true,
+              };
+            }
+
+            return element;
+          }),
+        ]
+      };
+    }
+
+
+
+
+
+
 
     default:
       return state;

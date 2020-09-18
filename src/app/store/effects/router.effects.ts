@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import * as fromRouterActions from '../actions/router.actions';
-
 import { tap, map } from 'rxjs/operators';
 
 @Injectable()
@@ -35,4 +33,5 @@ export class RouterEffects {
     ofType(fromRouterActions.RouterActionTypes.forward),
     tap(() => this.location.forward())
   );
+
 }

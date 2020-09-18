@@ -1,5 +1,5 @@
 <div class="mat-drawer-container pic">
-  <form [formGroup]="reactiveForm">
+  <form [formGroup]="reactiveForm" (ngSubmit)="login()">
     <div class="center registrationFormUnderlayer">
       <h1 class="header-h1"><b>Login</b></h1>
       <div>
@@ -41,7 +41,6 @@
           type="submit"
           class="width_100 black"
           [disabled]="reactiveForm.invalid"
-          routerLink="/todo-list"
         >Login
         </button>
       </div>

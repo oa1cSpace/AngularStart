@@ -9,13 +9,13 @@
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item
-                routerLink="/edit-profile"
+                routerLink="/profile"
                 class="black">
           <mat-icon>perm_contact_calendar</mat-icon>
           <span>Edit profile</span>
         </button>
-        <a routerLink="/" class="black">
-          <button mat-menu-item>
+        <a  class="black">
+          <button mat-menu-item (click)="logOut()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Exit</span>
           </button>
@@ -38,15 +38,16 @@
       <div class="todo-item-left">
 
         <mat-checkbox color="primary"
-                      [(ngModel)]="todo.completed"
-                      (change)="doneEdit(todo)">
+                      [checked]="todo.completed"
+                      name="completed"
+                      (change)="todoIsDone(todo)">
         </mat-checkbox>
 
-        <div *ngIf="!todo.editing; else editingTodo"
+        <div *ngIf="!todo.editingOnUI; else editingTodo"
              class="todo-item-label"
              [ngClass]="{ 'completed' : todo.completed }"
              (dblclick)="editTodo(todo)">
-          {{ todo.title }}
+          {{todo.title}}
         </div>
         <ng-template #editingTodo>
           <input matInput class="todo-item-edit"

@@ -1,10 +1,11 @@
 export interface Todo {
   id?: number;
-  title: string;
-  completed: boolean;
-  editing: boolean;
   user_id?: number;
-  createdAt?: string;
+  title: string;
   description?: string;
+  editing?: boolean;
+  editingOnUI?: boolean;
+  completed?: boolean | null;
+  createdAt?: string;
   updatedAt? : string
 }

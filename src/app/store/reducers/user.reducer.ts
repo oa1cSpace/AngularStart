@@ -16,13 +16,22 @@ export interface State extends EntityState<User> {
 
 export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
 
-export const initialState: State = adapter.getInitialState({
+// export const initialState: State = adapter.getInitialState({
+//   user: null,
+//   loaded: false,
+//   loading: false,
+//   selectedUserId: null,
+//   error: null,
+// });
+
+export const initialState : any = {
   user: null,
   loaded: false,
   loading: false,
   selectedUserId: null,
   error: null,
-});
+};
+
 
 export function reducer(state = initialState, action: UserActions): State {
 

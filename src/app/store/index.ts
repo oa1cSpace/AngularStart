@@ -21,7 +21,7 @@ export interface State {
 
 export const reducers: ActionReducerMap<State> = {
   users: users.reducer,
-   todos: todos.reducer,
+  todos: todos.reducer,
   router: routerReducer,
 };
 
